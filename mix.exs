@@ -38,13 +38,15 @@ defmodule Scrivener.Ecto.Mixfile do
 
   defp deps do
     [
-      {:scrivener, "~> 2.4"},
+      # {:scrivener, path: "/Users/christiankoch/projects/scrivener", override: true},
+      # {:scrivener, ">= 0.0.0"},
+      {:scrivener, github: "carsdotcom/scrivener", ref: "9c8d3226"},
       {:ecto, "~> 3.3"},
       {:ecto_sql, "~> 3.3", only: :test},
-      {:dialyxir, "~> 1.0", only: :dev},
       {:earmark, ">= 0.0.0", only: :dev},
       {:ex_doc, "~> 0.23", only: :dev},
-      {:postgrex, "~> 0.15.0", only: :test}
+      {:postgrex, "~> 0.15", only: :test},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false}
     ]
   end
 
@@ -53,9 +55,9 @@ defmodule Scrivener.Ecto.Mixfile do
 
   defp package do
     [
-      maintainers: ["Drew Olson"],
+      maintainers: ["Drew Olson DOA", "Cars Commerce Engineering"],
       licenses: ["MIT"],
-      links: %{"github" => "https://github.com/drewolson/scrivener_ecto"},
+      links: %{"github" => "https://github.com/carsdotcom/scrivener_ecto"},
       files: [
         "lib/scrivener",
         "mix.exs",
